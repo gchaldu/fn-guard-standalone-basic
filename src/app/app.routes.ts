@@ -3,6 +3,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AccessDeniedPageComponent } from './auth/pages/access-denied-page/access-denied-page.component';
 import { AdminPageComponent } from './admin/pages/admin-page/admin-page.component';
 import { authGuardFn } from './auth/guard/auth.guard-fn';
+import { authGuardFnLogOut } from './auth/guard/auth.guard-fn-logout';
 
 export const routes: Routes = [
   {
@@ -11,7 +12,8 @@ export const routes: Routes = [
   },
   {
     path: 'access-denied',
-    component: AccessDeniedPageComponent
+    component: AccessDeniedPageComponent,
+    canActivate: [authGuardFnLogOut]
   },
   {
     path: 'admin',

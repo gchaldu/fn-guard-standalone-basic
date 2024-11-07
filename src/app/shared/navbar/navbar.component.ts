@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../auth/service/auth.service';
 
@@ -9,7 +9,14 @@ import { AuthService } from '../../auth/service/auth.service';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+
+  ngOnInit(): void {
+    if (localStorage.getItem("token")) {
+      this.AuthService.login()
+      this.textButton = 'LogOut'
+    }
+  }
 
   AuthService = inject(AuthService);
   router = inject(Router)
@@ -19,10 +26,12 @@ export class NavbarComponent {
       this.AuthService.login()
       this.textButton = 'LogOut'
       this.router.navigate(['admin'])
+      localStorage.setItem('token', "123,abc.%&$")
     } else {
       this.AuthService.logout()
       this.textButton = 'Login'
       this.router.navigateByUrl('home')
+      localStorage.removeItem("token")
     }
 
   }
