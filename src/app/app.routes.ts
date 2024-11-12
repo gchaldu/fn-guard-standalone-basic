@@ -13,7 +13,8 @@ export const routes: Routes = [
   },
   {
     path: 'auth',
-    component: AuthPageComponent
+    component: AuthPageComponent,
+    canActivate: [authGuardFnLogOut]
   },
   {
     path: 'access-denied',

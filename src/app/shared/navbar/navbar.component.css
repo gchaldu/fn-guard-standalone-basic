@@ -35,4 +35,5 @@ button {
   background-color: var(--primario);
   color: var(--cuarto);
   padding: 0.5rem 1.2rem;
+  cursor: pointer;
 }

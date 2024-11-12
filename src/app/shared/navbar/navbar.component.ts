@@ -18,26 +18,11 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  AuthService = inject(AuthService);
+  AuthService = inject(AuthService)
   router = inject(Router)
   textButton = 'Login'
+
   onLogin() {
-    if (this.textButton === 'Login') {
-      //this.AuthService.login()
-      this.textButton = 'LogOut'
-      //this.router.navigate(['admin'])
-      //localStorage.setItem('token', "123,abc.%&$")
-    } else {
-      this.AuthService.logout()
-      this.textButton = 'Login'
-      this.router.navigateByUrl('home')
-      localStorage.removeItem("token")
-    }
-
-  }
-
-  onLogOut() {
-    this.AuthService.logout()
-    this.textButton = 'Login'
+    this.router.navigate(['auth'])
   }
 }
