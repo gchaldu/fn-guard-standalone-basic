@@ -1,0 +1,42 @@
+.principal {
+  position: relative;
+  background-color: var(--terciario);
+  width: 100%;
+  height: 100%;
+}
+fieldset {
+  width: 30%;
+  margin: 0 auto;
+  font-size: 2rem;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid 1px var(--primario);
+  color: var(--primario);
+}
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+label {
+  color: var(--primario);
+  font-size: 1.7rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+button {
+  border: none;
+  background-color: var(--primario);
+  margin: 2rem 0;
+  font-size: 1.7rem;
+  color: var(--terciario);
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+}
