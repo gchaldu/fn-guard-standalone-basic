@@ -1,0 +1,11 @@
+<fieldset>
+  <legend>LogIn</legend>
+  <form [formGroup]="formulario" (ngSubmit)="onLogin()">
+    <label for="username">Username: </label>
+    <input type="text" name="username" id="username" formControlName="username">
+    <label for="password">Password: </label>
+    <input type="password" name="password" id="password" formControlName="password" >
+
+    <button type="submit">LogIn</button>
+  </form>
+</fieldset>

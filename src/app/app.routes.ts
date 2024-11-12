@@ -4,11 +4,16 @@ import { AccessDeniedPageComponent } from './auth/pages/access-denied-page/acces
 import { AdminPageComponent } from './admin/pages/admin-page/admin-page.component';
 import { authGuardFn } from './auth/guard/auth.guard-fn';
 import { authGuardFnLogOut } from './auth/guard/auth.guard-fn-logout';
+import { AuthPageComponent } from './auth/pages/auth-page/auth-page.component';
 
 export const routes: Routes = [
   {
     path: 'home',
     component: HomePageComponent
+  },
+  {
+    path: 'auth',
+    component: AuthPageComponent
   },
   {
     path: 'access-denied',
